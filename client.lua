@@ -1,18 +1,20 @@
--- Most of the things here are for FiveM flight sims. This can work with anything you would like... Freeroam, EMS, Police, ext.
+-- Most of the things here are for FiveM flight sims. This can work with anything you would like... Freeroam, EMS, police, ext.
 -- If you would like to add more TP's just copy and paste it.
+-- Everything listed below in the LSIA TELEPORT can work with all the teleports.
 -- If you need any further help add me on Discord: Codster#0001
 
 -- LSIA TELEPORT --
 
--- Change the chat command here. You can change where it says "lsia" to the "/" command you want.
+-- If you would like to change the ingame "/" command, you can change it below. Replace "lsia" with anything you would like. (this works with all of them)
 RegisterCommand("lsia", function()
     local playerLoc = GetEntityCoords(player)
     local ped = GetPlayerPed(-1)
     local veh = GetVehiclePedIsUsing(ped)
--- Change the notification the player gets when they get teleported below. 
--- You can make a message show in chat to by putting "msg("[message]").
+-- Below is the text it sends to the player when they get teleported. You can change that below. (same goes with all of them)
+-- If you would like it to show a chat message add a line and put "msg("[message]")". To customize the prefix and color of the chat message see line "106" of code.
     notify("~b~You have been teleported to LSIA.")
--- Change the TP coords here. Change "-1253.11, -2811.7, 13.95".
+-- Change the TP coords here. Change "-1253.11, -2811.7, 13.95". 
+-- If you want to be teleported with a vehicle, replace "GetPlayerPed(-1)," with "GetVehiclePedIsUsing(ped),".
     SetEntityCoords(GetPlayerPed(-1), -1253.11, -2811.7, 13.95)
 end, false)
 
@@ -99,10 +101,18 @@ end, false)
 -- TOUCH IF YOU WANT --
 
 -- If you have msg function enabled you can change the chat prefix and color in rgb below.
-
 function msg(text)
     TriggerEvent("chatMessage", "[PREIFX]", {0,47,108}, text)
 end
+
+
+
+
+
+
+
+
+
 
 -- DO NOT TOUCH --
 
